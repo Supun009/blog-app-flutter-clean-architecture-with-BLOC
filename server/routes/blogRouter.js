@@ -19,7 +19,6 @@ const upload = multer({ storage });
 });
 
 blogRout.post('/api/upload', auth, upload.single('image'), async(req, res)=> {
-    console.log("hello") 
     try {
         if (!req.file) {
             return res.status(400).send('No file uploaded.');
